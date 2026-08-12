@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="ShopEase - A simple full-stack e-commerce shopping platform">
+
+    <title>ShopEase | E-Commerce Store</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         NAVIGATION BAR
+    =================================================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                ShopEase
+            </a>
+
+
+            <nav class="nav-links">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#products">
+                    Products
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <button type="button" id="cartButton" class="cart-button">
+                    Cart:
+                    <span id="cartCount">0</span>
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MAIN CONTENT
+    =================================================== -->
+
+    <main>
+
+
+        <!-- ==================================================
+             HERO SECTION
+        =================================================== -->
+
+        <section id="home" class="hero">
+
+            <div class="hero-container">
+
+
+                <div class="hero-content">
+
+                    <p class="hero-label">
+                        SIMPLE SHOPPING, BUILT FROM SCRATCH
+                    </p>
+
+
+                    <h1>
+                        Find What You Need,
+                        <br>
+                        Shop It Simply.
+                    </h1>
+
+
+                    <p class="hero-description">
+                        Discover useful products, check important
+                        product details, compare available options
+                        and add your choices to your shopping cart.
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a href="#products" class="primary-button">
+                            Explore Products
+                        </a>
+
+
+                        <a href="#about" class="secondary-button">
+                            About ShopEase
+                        </a>
+
+                    </div>
+
+
+                    <div class="hero-stats">
+
+
+                        <div class="hero-stat">
+
+                            <strong>
+                                4+
+                            </strong>
+
+                            <span>
+                                Products
+                            </span>
+
+                        </div>
+
+
+                        <div class="hero-stat">
+
+                            <strong>
+                                3+
+                            </strong>
+
+                            <span>
+                                Categories
+                            </span>
+
+                        </div>
+
+
+                        <div class="hero-stat">
+
+                            <strong>
+                                Easy
+                            </strong>
+
+                            <span>
+                                Shopping
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             PRODUCTS SECTION
+        =================================================== -->
+
+        <section id="products" class="products-section">
+
+            <div class="section-container">
+
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        EXPLORE OUR COLLECTION
+                    </p>
+
+
+                    <h2>
+                        Our Products
+                    </h2>
+
+
+                    <p>
+                        Explore useful products with clear information
+                        about price, category, description and stock.
+                    </p>
+
+                </div>
+
+
+
+                <!-- PRODUCT CONTROLS -->
+
+                <div class="product-tools">
+
+
+                    <div class="tool-group">
+
+                        <label for="searchInput">
+                            Search
+                        </label>
+
+                        <input type="text" id="searchInput" placeholder="Search products...">
+
+                    </div>
+
+
+
+                    <div class="tool-group">
+
+                        <label for="categoryFilter">
+                            Category
+                        </label>
+
+                        <select id="categoryFilter">
+
+                            <option value="all">
+                                All Categories
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="tool-group">
+
+                        <label for="sortProducts">
+                            Sort By
+                        </label>
+
+                        <select id="sortProducts">
+
+                            <option value="default">
+                                Default
+                            </option>
+
+                            <option value="low-high">
+                                Price: Low to High
+                            </option>
+
+                            <option value="high-low">
+                                Price: High to Low
+                            </option>
+
+                            <option value="name">
+                                Name: A to Z
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <p id="productResult" class="product-result"></p>
+
+
+
+                <!-- PRODUCT LIST -->
+
+                <div id="productList" class="product-list">
+
+                    <p class="loading">
+                        Loading products...
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             SHOPPING FEATURES
+        =================================================== -->
+
+        <section class="shop-highlights">
+
+            <div class="section-container">
+
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        SHOPPING FEATURES
+                    </p>
+
+
+                    <h2>
+                        Everything You Need for Simple Shopping
+                    </h2>
+
+
+                    <p>
+                        ShopEase keeps the shopping process simple
+                        by bringing useful product information,
+                        discovery and cart management together.
+                    </p>
+
+                </div>
+
+
+
+                <div class="highlight-grid">
+
+
+                    <article class="highlight-item">
+
+                        <div class="feature-number">
+                            01
+                        </div>
+
+
+                        <h3>
+                            Clear Product Information
+                        </h3>
+
+
+                        <p>
+                            View product price, category, description
+                            and available stock before making a choice.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="highlight-item">
+
+                        <div class="feature-number">
+                            02
+                        </div>
+
+
+                        <h3>
+                            Simple Cart Management
+                        </h3>
+
+
+                        <p>
+                            Add products to your cart and keep track
+                            of your selected items in one place.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="highlight-item">
+
+                        <div class="feature-number">
+                            03
+                        </div>
+
+
+                        <h3>
+                            Easy Product Discovery
+                        </h3>
+
+
+                        <p>
+                            Search, filter and sort products to quickly
+                            find the items you are looking for.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             STORE OVERVIEW
+        =================================================== -->
+
+        <section class="store-overview">
+
+            <div class="section-container">
+
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        SHOPPING AT A GLANCE
+                    </p>
+
+
+                    <h2>
+                        ShopEase Overview
+                    </h2>
+
+                </div>
+
+
+
+                <div class="overview-grid">
+
+
+                    <div class="stat-item">
+
+                        <strong id="totalProducts">
+                            0
+                        </strong>
+
+                        <span>
+                            Products Available
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="stat-item">
+
+                        <strong id="totalCategories">
+                            0
+                        </strong>
+
+                        <span>
+                            Product Categories
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="stat-item">
+
+                        <strong>
+                            Simple
+                        </strong>
+
+                        <span>
+                            Shopping Experience
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================== ABOUT SECTION ==================== -->
+
+        <section id="about" class="about-section">
+
+            <div class="about-container">
+
+                <!-- ABOUT HEADING -->
+
+                <p class="section-label">ABOUT SHOPEASE</p>
+
+                <h2>Products Chosen for Everyday Needs</h2>
+
+                <p class="about-intro">
+                    ShopEase is a simple online store where you can explore useful
+                    products, check their details and choose what fits your needs.
+                    The idea is to keep product information clear and the shopping
+                    process easy to understand.
+                </p>
+
+
+                <!-- ==================== FOUR DETAILS BOXES ==================== -->
+
+                <div class="about-grid">
+
+                    <!-- BOX 1 -->
+
+                    <div class="about-card">
+
+                        <h3>Quality Products</h3>
+
+                        <p>
+                            Browse products with clear information about their price,
+                            category, description and available stock, so you can
+                            understand what you are choosing before adding it to
+                            your cart.
+                        </p>
+
+                    </div>
+
+
+                    <!-- BOX 2 -->
+
+                    <div class="about-card">
+
+                        <h3>Clear Product Details</h3>
+
+                        <p>
+                            Every product provides important details in one place.
+                            You can quickly check the price, category and stock
+                            before making your choice.
+                        </p>
+
+                    </div>
+
+
+                    <!-- BOX 3 -->
+
+                    <div class="about-card">
+
+                        <h3>Easy to Explore</h3>
+
+                        <p>
+                            Products are displayed in a simple layout so that users
+                            can browse the collection without unnecessary steps
+                            or complicated navigation.
+                        </p>
+
+                    </div>
+
+
+                    <!-- BOX 4 -->
+
+                    <div class="about-card">
+
+                        <h3>Simple Shopping</h3>
+
+                        <p>
+                            Find a product, check its information and add it to your
+                            cart. ShopEase keeps the basic shopping flow
+                            straightforward and easy to follow.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================== BUILT BY ==================== -->
+
+                <div class="author-section">
+
+                    <p class="section-label">BUILT BY</p>
+
+                    <h2>Naina</h2>
+
+                    <h3>Computer Science &amp; Data Science Student</h3>
+
+                    <p class="author-description">
+                        ShopEase is a hands-on project created while learning how
+                        different parts of a web application work together.
+                        Building this project helped me understand product
+                        management, REST APIs, backend integration and database
+                        connectivity through a practical application.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             WHY SHOPEASE
+        =================================================== -->
+
+        <section class="why-shopease">
+
+            <div class="section-container">
+
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        WHY SHOPEASE
+                    </p>
+
+
+                    <h2>
+                        A Simple Approach to Online Shopping
+                    </h2>
+
+
+                    <p>
+                        ShopEase brings product browsing, useful
+                        product information and cart management
+                        together in one straightforward application.
+                    </p>
+
+                </div>
+
+
+
+                <div class="why-grid">
+
+
+                    <article class="why-card">
+
+                        <span class="step-number">
+                            01
+                        </span>
+
+
+                        <h3>
+                            Browse
+                        </h3>
+
+
+                        <p>
+                            Explore available products and view
+                            the information you need before making
+                            a choice.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="why-card">
+
+                        <span class="step-number">
+                            02
+                        </span>
+
+
+                        <h3>
+                            Compare
+                        </h3>
+
+
+                        <p>
+                            Check prices, categories and stock
+                            information to understand your available
+                            options.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="why-card">
+
+                        <span class="step-number">
+                            03
+                        </span>
+
+
+                        <h3>
+                            Choose
+                        </h3>
+
+
+                        <p>
+                            Add selected products to your cart
+                            and manage your choices easily.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    ShopEase
+                </h2>
+
+
+                <p>
+                    A simple full-stack e-commerce project built
+                    to demonstrate how frontend, backend and
+                    database components work together.
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+
+                <a href="#home">
+                    Home
+                </a>
+
+
+                <a href="#products">
+                    Products
+                </a>
+
+
+                <a href="#about">
+                    About
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-info">
+
+                <h3>
+                    Technology
+                </h3>
+
+
+                <p>
+                    Frontend: HTML, CSS, JavaScript
+                </p>
+
+
+                <p>
+                    Backend: Node.js, Express.js
+                </p>
+
+
+                <p>
+                    Database: MongoDB
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ShopEase. Built as a learning project.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
