@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/products";
+const API_URL = "https://shopease-e-commerce-store.onrender.com/api/products";
 
 const productList = document.getElementById("productList");
 const cartCount = document.getElementById("cartCount");
@@ -23,7 +23,14 @@ async function loadProducts() {
 
         allProducts = Array.isArray(data)
             ? data
-            : data.products;
+            : (data.products || []);
+
+        // Remove duplicate products with the same name
+        allProducts = allProducts.filter((product, index, self) =>
+            index === self.findIndex(
+                p => p.name.trim().toLowerCase() === product.name.trim().toLowerCase()
+            )
+        );
 
         if (!allProducts || allProducts.length === 0) {
 
